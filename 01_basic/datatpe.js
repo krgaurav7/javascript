@@ -70,3 +70,28 @@ console.log(myFunctin)
 //array = object
 //function = function
 
+//+++++++++++++++++++++++++++++++++++=====++++++++++++++++===================
+
+// stack(primitive) and heap(non-primitive) memory
+
+let myytname = "sdjgf.com"
+let anotherytname = myytname
+
+anotherytname = " gfdhjadjk.com"
+
+console.log(myytname)
+console.log(anotherytname)
+// stack memory 
+
+let user1 = {
+    email : "rahu@gamil.com",
+    upi : "rahul@upi"
+}
+ let user2 = user1
+    user2.email = "rakeshgoogle@gmail.com"
+
+    console.log(user1)
+    console.log(user2)
+// heap memory
+// stack memory is used to store primitive data types, while heap memory is used to store reference data types.
+// stack memory is faster than heap memory, but it has a limited size. Heap memory is slower than stack memory, but it has a larger size.
