@@ -90,8 +90,8 @@ let user1 = {
  let user2 = user1
     user2.email = "rakeshgoogle@gmail.com"
 
-    console.log(user1)
-    console.log(user2)
+    console.log(user1.email)
+    console.log(user2.email)
 // heap memory
 // stack memory is used to store primitive data types, while heap memory is used to store reference data types.
 // stack memory is faster than heap memory, but it has a limited size. Heap memory is slower than stack memory, but it has a larger size.
