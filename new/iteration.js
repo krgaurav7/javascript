@@ -74,6 +74,39 @@ const array1 = ['Rohit', 'Rohan', 'Rahul', 'Ramesh', 'Rajesh', 'Rakesh', 'Ram', 
 
 // Maps : 
 
-const map = new Map()[
-    
-]
+const map = new Map()
+map.set('IN','India')
+map.set('EN', 'England')
+map.set('WI','West Indies')
+
+//console.log(map)
+
+for(const [key,value] of map){
+    //console.log(key, ':-',value)
+}
+
+// const myObject = {
+//     'game1' : 'Cricket',
+//     'game2' : 'Football',
+//     'game3' : 'Hockey',
+// }
+
+// for(const [key,value] of myObject){
+//     console.log(key, ':-', value);
+// }
+
+const myObject = {
+    js : 'JavaScript',
+    py : 'Python',
+    rb : 'Ruby',
+}
+
+for(const key in myObject){
+    //console.log(`${key} for shortcup is ${myObject[key]}`)
+}
+
+const languagearray = ['JavaScript', 'Python', 'Ruby', 'Java', 'C++'];
+
+for(const key in languagearray){
+    console.log(`${key} - ${languagearray[key]}`);
+}
