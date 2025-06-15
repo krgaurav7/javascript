@@ -1,0 +1,21 @@
+// DOM :- Document Object Model
+// The DOM is a programming interface for web documents.
+
+// It represents the structure of a document as a tree of objects, allowing scripts to manipulate the content, structure, and style of a document.
+
+// document.getElementById("id") - Returns the element with the specified id.
+// document.getElementsByClassName("class") - Returns a collection of elements with the specified class name.
+// document.getElementsByTagName("tag") - Returns a collection of elements with the specified tag name.
+// document.querySelector("selector") - Returns the first element that matches the specified CSS selector.
+// document.querySelectorAll("selector") - Returns a collection of elements that match the specified CSS selector.
+
+
+// convert nodelist to array
+const temp = document.querySelectorAll("div"); //
+Array.from(temp) // chage nodelist to array
+
+//use foreach loop 
+temp.forEach((item) => {
+    item.stylr.color = "red"; // change color of all divs to red
+    item.style.backgroundColor = "blue"; // change background color of all divs to blue
+});
