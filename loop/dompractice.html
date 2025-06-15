@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Practice</title>
+</head>
+<body style="background-color: black; color: white;">
+    
+
+    <ul class="language">
+        <li>JavaScript</li>
+        <li>Python</li>
+        <li>Java</li>
+    </ul>
+</body>
+<script>
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++// Creating a div element using JavaScript
+    const div1 = document.createElement('div')
+    div1.className = "main"
+    div1.id = Math.round(Math.random()*10+1)
+    div1.setAttribute("title", "Generated title")
+    div1.style.backgroundColor = "blue"
+    div1.style.padding = "10px"
+    div1.style.color = "white"
+
+    //div1.innerText = "This is a div created by JavaScript" // This will replace the content of the div
+
+    const text = document.createTextNode("Hello World") // Create a text node
+    div1.appendChild(text)
+
+    document.body.appendChild(div1)
+    //console.log(div1)
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+function addLanguage(languageName){
+    const li = document.createElement("li")
+    //const Text = document.createTextNode(languageName)
+    li.innerHTML = `${languageName}`
+
+    document.querySelector(".language").appendChild(li)
+}
+//addLang("c++")
+//addLang("C#")
+
+//method 2
+
+function addLang(langName){
+    const li = document.createElament("li")
+    const text = document.createTextNode(langName)
+    li.appendChild(text)
+
+    document.querySelector(".language").appendChild(li)
+}
+//addLanguage("c++")
+//addLanguage("react")
+
+
+/// Edit 
+const secondlang = document.querySelector("li:nth-child(2)")
+//secondlang.innerHTML = "python3" // This will change the content of the second list item
+
+const newLI = document.createElement("li")
+newLI.textContent = "mojo"
+secondlang.replaceWith(newLI)
+
+//edit 
+const firstLang = document.querySelector("li:first-child")
+firstLang.outerHTML = "<li>Typescript</li>" // This will replace the first list item with an h1 element
+
+
+// remove 
+const lastChild = document.querySelector("li:last-child")
+//lastChild.remove()
+</script>
+</html> 
