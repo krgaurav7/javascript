@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h1 style="font-family: Arial, Helvetica, sans-serif; display: flex;">Amazing Images</h1>
+    <ul id="images">
+        <li><img width="280px" id="photoshop" src ="https://images.pexels.com/photos/443446/pexels-photo-443446.jpeg" alt="photoshop"></li>
+        <li><img width="280px" id="river" src ="https://images.pexels.com/photos/1144176/pexels-photo-1144176.jpeg" alt="photoshop"></li>
+        <li><img width="280px" id="cricket" src ="https://images.pexels.com/photos/115655/pexels-photo-115655.jpeg" alt="photoshop"></li>
+        <li><img width="280px" id="us" src ="https://images.pexels.com/photos/35208/office-home-glasses-workspace.jpg" alt="photoshop"></li>
+        <li><img width="280px" id="england" src ="https://images.pexels.com/photos/3459979/pexels-photo-3459979.jpeg" alt="photoshop"></li>
+        <li><a style="color: white;" href="https://google.com" id="google">Google</a></li>
+    </ul>
+</body>
+    <script>
+        //Method 1
+        // document.getElementById('us').onclick = function(){
+        //     alert('Us Clicked')
+        // }
+
+        // type, timestamp, defaultPrevented
+        // target, toElement, srcElement, currentTarget
+        //clientX, clientY, screenX, screenY
+        //altKet, ctrlKet, shiftKey, keyCode
+
+        // Event Propagation - Bubbling and Capturing 
+        //Event propagation in JavaScript describes the order in which event handlers are called when an event occurs on nested elements. There are two main phases:
+        // Capturing phase (capture):  during true
+        // The event starts from the root and travels down to the target element.
+        // Bubbling phase (bubble): during false
+        // The event bubbles up from the target element back to the root.
+
+        // Method 2 
+
+
+        //  document.getElementById('images').addEventListener('click', function(e){
+        //     console.log('Images Clicked');
+        // },false)
+
+        // document.getElementById('us').addEventListener('click', function(e){
+        //     console.log('us Clicked');
+        //     //e.stopPropagation(); // used to stop bubbling 
+        // },false)
+        
+        // document.getElementById('google').addEventListener('click', function(e){
+        //      e.preventDefault();
+        //      e.stopPropagation();
+        //     console.log('google clicked')
+        // }, false)
+
+
+        //to remove 
+        // document.querySelector('#images').addEventListener('click', function(event){
+        //     console.log(event.target.parentNode)
+        //     let removeIt = event.target.parentNode
+        //         //removeIt.remove();
+        //         removeIt.parentNode.removeChild(removeIt)
+        // },false)
+
+        // to remove only images
+        document.querySelector('#images').addEventListener('click', function(event){
+            console.log(event.target.tagName)
+            if(event.target.tagName === 'IMG'){
+                let removeIt = event.target.parentNode
+                //removeIt.remove();
+                console.log(event.target.id)
+                removeIt.parentNode.removeChild(removeIt)
+            } else {
+                console.log(event.target.id)
+                event.preventDefault();
+            }
+        },false)
+
+    </script>
+</html>
